@@ -17,7 +17,7 @@ const Cart = (props) => {
         return (
           <li>
             <h3>
-              Name:{item.name} || Quantity:{item.quantity} || Price :{" "}
+              Name:{item.name} || Quantity:{item.quantity} || Price :
               {item.price}
             </h3>
           </li>

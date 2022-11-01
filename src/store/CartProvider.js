@@ -6,8 +6,21 @@ const CartProvider = (props) => {
   const [items, setItems] = useState([]);
 
   const addItemtoCartHandler = (item) => {
-    setItems([...items, item]);
-    console.log("Before Re-rendering", cartContext);
+    console.log(item)
+    let hasItems = false;
+    const newArray = [...items];
+    newArray.forEach((element, index) => {
+      
+      if (element.name === item.name) {
+        hasItems = true;
+      newArray[index].quantity = Number(newArray[index].quantity) + Number(item.quantity);
+      }
+    });
+    if (hasItems === true) {
+      setItems(newArray);
+    } else {
+      setItems([...items, item]);
+    }
   };
 
   const removeItemfromCartHandler = () => {};
